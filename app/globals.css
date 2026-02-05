@@ -1,0 +1,380 @@
+@import "tailwindcss";
+/* Removed @import "tw-animate-css"; to fix CSS syntax error */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Added spacing scale variables for consistent vertical spacing */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Updated to new professional color palette */
+  /* Main background - deep black */
+  --background: #0c0c0c;
+  /* Main text - pure white */
+  --foreground: #ffffff;
+  /* Card background - graphite gray */
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  /* Popover - graphite gray */
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  /* Primary buttons - emerald green */
+  --primary: #22c55e;
+  --primary-foreground: #ffffff;
+  /* Secondary - graphite gray */
+  --secondary: #1a1a1a;
+  --secondary-foreground: #cccccc;
+  /* Muted - light gray text */
+  --muted: #1a1a1a;
+  --muted-foreground: #cccccc;
+  /* Accent - soft gold for premium elements */
+  --accent: #ff4a4a;
+  --accent-foreground: #ffffff;
+  /* Destructive - wine red */
+  --destructive: #c1272d;
+  --destructive-foreground: #ffffff;
+  /* Borders - graphite gray */
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+  /* Ring - emerald green */
+  --ring: #22c55e;
+  /* Chart colors */
+  --chart-1: #22c55e;
+  --chart-2: #ff4a4a;
+  --chart-3: #c1272d;
+  --chart-4: #60a5fa;
+  --chart-5: #cccccc;
+  --radius: 0.75rem;
+  /* Sidebar colors */
+  --sidebar: #0c0c0c;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #22c55e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #cccccc;
+  --sidebar-border: #1a1a1a;
+  --sidebar-ring: #22c55e;
+}
+
+.dark {
+  --background: #0c0c0c;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --primary: #22c55e;
+  --primary-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #cccccc;
+  --muted: #1a1a1a;
+  --muted-foreground: #cccccc;
+  --accent: #ff4a4a;
+  --accent-foreground: #ffffff;
+  --destructive: #c1272d;
+  --destructive-foreground: #ffffff;
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+  --ring: #22c55e;
+  --chart-1: #22c55e;
+  --chart-2: #ff4a4a;
+  --chart-3: #c1272d;
+  --chart-4: #60a5fa;
+  --chart-5: #cccccc;
+  --radius: 0.75rem;
+  --sidebar: #0c0c0c;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #22c55e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #cccccc;
+  --sidebar-border: #1a1a1a;
+  --sidebar-ring: #22c55e;
+}
+
+/* Updated font variables to use Inter instead of Geist */
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Critical rendering optimizations */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+  
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Standardized heading and text margins */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+  }
+
+  p,
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Remove bottom margin from last child to prevent spacing accumulation */
+  section *:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Enhanced font-display swap for better font loading performance */
+  @font-face {
+    font-display: swap;
+  }
+  /* Added keyframes for shine-pulse animation */
+  @keyframes shine-pulse {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  /* Shimmer animation for scroll button */
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+/* Added utility classes for standardized spacing */
+.section-spacing {
+  padding-block: clamp(var(--space-xl), 6vw, var(--space-2xl));
+}
+
+.section-spacing-mobile {
+  padding-block: var(--space-xl);
+}
+
+@media (min-width: 1024px) {
+  .section-spacing-mobile {
+    padding-block: var(--space-2xl);
+  }
+}
+
+.content-gap {
+  gap: var(--space-md);
+}
+
+.section-gap {
+  gap: var(--space-lg);
+}
+
+/* Updated gradient utilities to use new emerald green */
+.gradient-primary {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+/* Updated gradient-accent to use soft gold */
+.gradient-accent {
+  background: linear-gradient(135deg, #ff4a4a 0%, #e63946 100%);
+}
+
+/* Updated gradient-hero to match new deep black background */
+.gradient-hero {
+  background: #0c0c0c;
+}
+
+/* Optimize carousel and image rendering performance */
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  contain: layout style paint;
+  will-change: transform;
+}
+
+.carousel-slide {
+  aspect-ratio: 9 / 16;
+  min-height: 380px;
+  position: relative;
+  display: block;
+  will-change: transform;
+  content-visibility: auto;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  decoding: async;
+}
+
+/* Prevent layout shifts in flex containers */
+.flex.overflow-x-auto {
+  min-height: 380px;
+}
+
+/* Optimize button performance - only use will-change on hover */
+button {
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+button:hover {
+  will-change: transform;
+}
+
+/* Section rendering - removed content-visibility to fix scroll issues */
+
+/* Optimize iframes for third-party content */
+iframe {
+  will-change: contents;
+}
+
+/* Images with lazy loading */
+
+/* Desabilitar animações em dispositivos com movimento reduzido ou conexões lentas */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Media query para dispositivos móveis fracos */
+@media (max-width: 768px) {
+  /* Remover will-change em mobile para economizar memória */
+  button,
+  section,
+  .carousel-container,
+  .carousel-slide {
+    will-change: auto !important;
+  }
+
+  /* Desabilitar animações complexas em mobile */
+  .gradient-primary,
+  .gradient-accent {
+    background-attachment: scroll !important;
+  }
+
+  /* Reduzir motion em mobile */
+  * {
+    animation-duration: 0.15s !important;
+    transition-duration: 0.15s !important;
+  }
+
+  /* Otimizar iframes em mobile */
+  iframe {
+    will-change: auto;
+  }
+
+  /* Remover backdrop-blur em mobile para melhor performance */
+  .backdrop-blur,
+  [class*="backdrop-blur"] {
+    backdrop-filter: none !important;
+  }
+
+  /* Otimizar dropdown e popover em mobile */
+  [role="dialog"],
+  [role="tooltip"],
+  [role="menu"] {
+    transform: translateZ(0) !important;
+  }
+}
+
+/* Otimizações ultra-agressivas para conexões 2G/3G */
+@media (max-width: 480px) {
+  /* Desabilitar todas as animações em telas pequenas */
+  [class*="animate"],
+  [class*="transition"] {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Simplificar shadows em mobile fraco */
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl,
+  .drop-shadow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Remover efeitos de blur */
+  [class*="blur"] {
+    filter: none !important;
+  }
+
+  /* Otimizar contain para melhor performance */
+  section {
+    contain: layout style paint !important;
+    content-visibility: auto !important;
+  }
+}
