@@ -78,28 +78,30 @@ const nextConfig = {
     optimizeServerIslands: true,
   },
   webpack: (config, { isServer }) => {
-    config.optimization.splitChunks.cacheGroups = {
-      default: false,
-      vendors: false,
-      lucide: {
-        test: /[\\/]node_modules[\\/]lucide-react/,
-        name: 'lucide',
-        priority: 10,
-        reuseExistingChunk: true,
-        minChunks: 1,
-      },
-      radix: {
-        test: /[\\/]node_modules[\\/]@radix-ui/,
-        name: 'radix',
-        priority: 10,
-        reuseExistingChunk: true,
-      },
-      ui: {
-        test: /[\\/]components[\\/]ui/,
-        name: 'ui-chunk',
-        priority: 5,
-        minSize: 20000,
-      },
+    // Only modify splitChunks if it's an object (not false/boolean)
+    if (config.optimization.splitChunks && typeof config.optimization.splitChunks === 'object') {
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        lucide: {
+          test: /[\\/]node_modules[\\/]lucide-react/,
+          name: 'lucide',
+          priority: 10,
+          reuseExistingChunk: true,
+          minChunks: 1,
+        },
+        radix: {
+          test: /[\\/]node_modules[\\/]@radix-ui/,
+          name: 'radix',
+          priority: 10,
+          reuseExistingChunk: true,
+        },
+        ui: {
+          test: /[\\/]components[\\/]ui/,
+          name: 'ui-chunk',
+          priority: 5,
+          minSize: 20000,
+        },
+      }
     }
     return config
   },
