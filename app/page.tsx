@@ -23,6 +23,7 @@ import { CountdownTimer } from "@/components/countdown-timer"
 import { AgeGate } from "@/components/age-gate"
 // REMOVED: import { UTMLink } from "@/components/utm-link" // Removed UTMLink import
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { EditMode } from "@/components/edit-mode"
 import { useState, useEffect, useCallback, useRef } from "react"
 import dynamic from "next/dynamic"
 import { HoverButton } from "@/components/ui/hover-button"
@@ -186,6 +187,7 @@ export default function FelicidadeDelasLanding() {
 
   return (
     <div className="min-h-screen bg-background pt-10">
+      <EditMode />
       <AgeGate />
 
       <div id="main-content">
