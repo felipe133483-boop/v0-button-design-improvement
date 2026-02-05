@@ -60,6 +60,10 @@ export default function FelicidadeDelasLanding() {
   const [bonusVideoLoaded, setBonusVideoLoaded] = useState(false)
   const [heroVideoPreloaded, setHeroVideoPreloaded] = useState(false)
   const heroVideoRef = useRef<HTMLDivElement>(null)
+  
+  // Thumbnail fallback states
+  const [heroThumbSrc, setHeroThumbSrc] = useState("/images/hero-video-thumb.webp")
+  const [accessThumbSrc, setAccessThumbSrc] = useState("/images/access-video-thumb.webp")
 
   // Preload Vimeo iframe on hover/touch for faster video start
   const preloadHeroVideo = useCallback(() => {
@@ -237,7 +241,7 @@ export default function FelicidadeDelasLanding() {
                   aria-label="Reproduzir vídeo"
                 >
                   <Image
-                    src="/images/hero-video-thumb.webp"
+                    src={heroThumbSrc || "/placeholder.svg"}
                     alt="Curso Felicidade Delas - Clique para assistir"
                     fill
                     priority
@@ -245,6 +249,7 @@ export default function FelicidadeDelasLanding() {
                     sizes="(max-width: 768px) 100vw, 672px"
                     className="rounded-lg shadow-2xl object-cover"
                     quality={80}
+                    onError={() => setHeroThumbSrc("/thumb-fallback.jpg")}
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors rounded-lg">
                     <div className="w-20 h-20 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
@@ -348,13 +353,14 @@ export default function FelicidadeDelasLanding() {
                   aria-label="Reproduzir vídeo de acesso"
                 >
                   <Image
-                    src="/images/access-video-thumb.webp"
+                    src={accessThumbSrc || "/placeholder.svg"}
                     alt="Como acessar o conteudo - Clique para assistir"
                     fill
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 768px"
                     className="rounded-lg shadow-2xl object-cover"
                     quality={80}
+                    onError={() => setAccessThumbSrc("/thumb-fallback.jpg")}
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors rounded-lg">
                     <div className="w-20 h-20 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
