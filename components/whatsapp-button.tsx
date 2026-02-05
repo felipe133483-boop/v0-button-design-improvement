@@ -1,51 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
-
 export function WhatsAppButton() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    let timeoutId: NodeJS.Timeout | null = null
-    let hasShown = false
-
-    const showButton = () => {
-      if (!hasShown) {
-        hasShown = true
-        setIsVisible(true)
-        // Clean up listeners after showing
-        if (timeoutId) clearTimeout(timeoutId)
-        window.removeEventListener("scroll", handleScroll)
-      }
-    }
-
-    const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const scrollPercent = (scrollTop / docHeight) * 100
-
-      if (scrollPercent >= 50) {
-        showButton()
-      }
-    }
-
-    // Show after 20 seconds
-    timeoutId = setTimeout(showButton, 20000)
-
-    // Show after 50% scroll
-    window.addEventListener("scroll", handleScroll, { passive: true })
-
-    // Check initial scroll position
-    handleScroll()
-
-    return () => {
-      if (timeoutId) clearTimeout(timeoutId)
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
-  if (!isVisible) return null
-
   return (
     <a
       href="https://wa.link/k2wcfj"
