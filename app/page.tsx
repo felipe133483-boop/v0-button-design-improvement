@@ -194,7 +194,7 @@ export default function FelicidadeDelasLanding() {
           {/* Background Image - LCP Element */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/design-mode/Site-de-Lan%C3%A7amento-de-Beleza-Fotogr%C3%A1fico-Creme-e-Marrom.webp"
+              src="/images/design-mode/hero-background.webp"
               alt="Background"
               fill
               priority
