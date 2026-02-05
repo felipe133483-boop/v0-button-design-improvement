@@ -686,7 +686,7 @@ export default function FelicidadeDelasLanding() {
                         <Check className="w-4 h-4 text-white" />
                       </div>
                       <span className="text-sm md:text-base font-semibold text-gray-900">
-                        MAIS DE 33 AULAS EM 7 MÓDULOS
+                        MAIS DE 33 AULAS EM 7 M&#211;DULOS
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
