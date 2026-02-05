@@ -18,7 +18,7 @@ export function MembersAreaSection() {
         }
       >
         <Image
-          src="/images/design-mode/imagem_2025-11-05_120120511.webp"
+          src="/members-area.webp"
           alt="Área de membros exclusiva"
           height={720}
           width={1400}

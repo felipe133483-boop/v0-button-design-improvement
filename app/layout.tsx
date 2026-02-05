@@ -49,13 +49,13 @@ export default function RootLayout({
         <link 
           rel="preload" 
           as="image" 
-          href="/images/design-mode/Site-de-Lan%C3%A7amento-de-Beleza-Fotogr%C3%A1fico-Creme-e-Marrom.webp" 
+          href="/hero-bg.webp" 
           fetchPriority="high"
           type="image/webp"
         />
         
         {/* Preload hero video thumbnail - second priority for above-fold content */}
-        <link rel="preload" as="image" href="/images/hero-video-thumb.webp" type="image/webp" />
+        <link rel="preload" as="image" href="/thumb.jpg" type="image/jpeg" />
 
         {/* UTMify tracking - strategy afterInteractive to not block FCP */}
         <Script id="utmify-pixel" strategy="afterInteractive">

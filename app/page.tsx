@@ -194,7 +194,7 @@ export default function FelicidadeDelasLanding() {
           {/* Background Image - LCP Element */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/design-mode/Site-de-Lan%C3%A7amento-de-Beleza-Fotogr%C3%A1fico-Creme-e-Marrom.webp"
+              src="/hero-bg.webp"
               alt="Background"
               fill
               priority
@@ -293,19 +293,19 @@ export default function FelicidadeDelasLanding() {
               <AutoPlayCarousel
                 images={[
                   {
-                    src: "/images/captura-20de-20tela-202025-07-06-20125548.png",
+                    src: "/testimonial-1.png",
                     alt: "Conversa com aluna mostrando resultado positivo",
                   },
                   {
-                    src: "/images/captura-20de-20tela-202025-07-07-20000536.png",
+                    src: "/testimonial-2.png",
                     alt: "Depoimento de aluna satisfeita",
                   },
                   {
-                    src: "/images/captura-20de-20tela-202025-07-06-20125527.png",
+                    src: "/testimonial-3.png",
                     alt: "Feedback positivo de aluna",
                   },
                   {
-                    src: "/images/captura-20de-20tela-202025-07-06-20125604.png",
+                    src: "/testimonial-4.png",
                     alt: "Aluno compartilhando sucesso após o curso",
                   },
                 ]}
@@ -475,7 +475,7 @@ export default function FelicidadeDelasLanding() {
 
             <div className="max-w-3xl mx-auto" style={{ marginBottom: "var(--space-2xl)" }}>
               <Image
-                src="/images/bonus-768x512.webp"
+                src="/bonus.webp"
                 alt="Bônus exclusivos do programa"
                 width={768}
                 height={512}
