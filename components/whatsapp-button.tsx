@@ -10,7 +10,7 @@ export function WhatsAppButton() {
         position: "fixed",
         bottom: "24px",
         right: "24px",
-        zIndex: 99999,
+        zIndex: 2147483647,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -20,6 +20,7 @@ export function WhatsAppButton() {
         borderRadius: "50%",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
         transition: "transform 0.2s ease",
+        pointerEvents: "auto",
       }}
       aria-label="Fale conosco no WhatsApp"
       onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}

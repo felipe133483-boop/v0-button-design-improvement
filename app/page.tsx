@@ -22,7 +22,6 @@ import Image from "next/image"
 import { CountdownTimer } from "@/components/countdown-timer"
 import { AgeGate } from "@/components/age-gate"
 // REMOVED: import { UTMLink } from "@/components/utm-link" // Removed UTMLink import
-import { WhatsAppButton } from "@/components/whatsapp-button"
 import { EditMode } from "@/components/edit-mode"
 import { useState, useEffect, useCallback, useRef } from "react"
 import dynamic from "next/dynamic"
@@ -883,8 +882,6 @@ export default function FelicidadeDelasLanding() {
           </div>
         </section>
       </div>
-
-      <WhatsAppButton />
     </div>
   )
 }
