@@ -663,7 +663,7 @@ export default function FelicidadeDelasLanding() {
               {/* Complete Access Card */}
               <div className="bg-white rounded-lg overflow-hidden shadow-xl border-4 border-[#22C55E] max-w-md w-full">
                 <div className="bg-[#22C55E] text-white text-center py-4">
-                  <h3 className="text-xl md:text-2xl font-bold">OFERTA DE CARNAVAL DE R$197,90 POR:</h3>
+                  <h3 className="text-xl md:text-2xl font-bold">OFERTA DE CARNAVAL DE R$97,90 POR:</h3>
                   <p className="text-sm md:text-base font-semibold mt-1">
                     {""}
                   </p>
@@ -674,7 +674,7 @@ export default function FelicidadeDelasLanding() {
                     <div className="flex items-start justify-center gap-1">
                       <span className="text-xs md:text-sm text-gray-600 mt-2 font-bold">{""} </span>
                       <span className="text-2xl text-gray-600 mt-2">R$</span>
-                      <span className="text-7xl md:text-8xl font-bold text-gray-900">47</span>
+                      <span className="text-7xl md:text-8xl font-bold text-gray-900">27</span>
                       <span className="text-2xl text-gray-600 mt-2">,90</span>
                     </div>
                     <p className="text-sm text-gray-500 mt-2">{""}</p>
@@ -686,7 +686,7 @@ export default function FelicidadeDelasLanding() {
                         <Check className="w-4 h-4 text-white" />
                       </div>
                       <span className="text-sm md:text-base font-semibold text-gray-900">
-                        MAIS DE 33 AULAS EM 7 MÓDULOS
+                        MAIS DE 33 AULAS EM 7 M��DULOS
                       </span>
                     </div>
                     <div className="flex items-center gap-3">

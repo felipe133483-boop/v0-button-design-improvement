@@ -18,7 +18,7 @@ export function AnnouncementBanner({
 
   if (!isVisible) return null
 
-  const parts = text.split("R$47,90")
+  const parts = text.split("R$27,90")
 
   return (
     <div className="w-full bg-[#ff4a4a] py-3 px-4 flex items-center justify-center relative">

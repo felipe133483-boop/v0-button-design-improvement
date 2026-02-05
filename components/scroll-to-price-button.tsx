@@ -53,7 +53,7 @@ const ScrollToPriceButton = React.forwardRef<HTMLButtonElement, ScrollToPriceBut
         {...props}
       >
         <span className="relative z-10 flex items-center gap-2 tracking-wide">
-          {children || "QUERO POR R$47,90"}
+          {children || "QUERO POR R$27,90"}
           <ArrowDown className="w-4 h-4 animate-bounce" />
         </span>
       </button>
