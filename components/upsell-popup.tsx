@@ -59,7 +59,7 @@ export function UpsellPopup({ open, onOpenChange }: UpsellPopupProps) {
           <div className="space-y-3">
             {/* Green Button - Complete Access */}
             <a
-              href="https://www.ggcheckout.com/checkout/v2/5wWSX3oqDeMH8YNPSx1v"
+              href="https://www.ggcheckout.com/checkout/v5/SYwxhjBa0TXYiKrVUilz"
               target="_blank"
               rel="noopener noreferrer"
               className="block"

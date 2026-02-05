@@ -160,7 +160,7 @@ export default function FelicidadeDelasLanding() {
 
       // Acesso Completo
       if (buttonText.includes("QUERO O ACESSO COMPLETO")) {
-        window.location.href = "https://www.ggcheckout.com/checkout/v2/SYwxhjBa0TXYiKrVUilz"
+        window.location.href = "https://www.ggcheckout.com/checkout/v5/SYwxhjBa0TXYiKrVUilz"
         return
       }
 
