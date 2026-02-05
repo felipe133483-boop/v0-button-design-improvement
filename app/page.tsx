@@ -59,6 +59,8 @@ export default function FelicidadeDelasLanding() {
   const [secondVideoLoaded, setSecondVideoLoaded] = useState(false)
   const [bonusVideoLoaded, setBonusVideoLoaded] = useState(false)
   const [heroVideoPreloaded, setHeroVideoPreloaded] = useState(false)
+  const [heroThumbError, setHeroThumbError] = useState(false)
+  const [secondThumbError, setSecondThumbError] = useState(false)
   const heroVideoRef = useRef<HTMLDivElement>(null)
 
   // Preload Vimeo iframe on hover/touch for faster video start
@@ -237,7 +239,7 @@ export default function FelicidadeDelasLanding() {
                   aria-label="Reproduzir vídeo"
                 >
                   <Image
-                    src="/images/hero-video-thumb.webp"
+                    src={heroThumbError ? "/thumb-fallback.jpg" : "/images/hero-video-thumb.webp"}
                     alt="Curso Felicidade Delas - Clique para assistir"
                     fill
                     priority
@@ -245,6 +247,8 @@ export default function FelicidadeDelasLanding() {
                     sizes="(max-width: 768px) 100vw, 672px"
                     className="rounded-lg shadow-2xl object-cover"
                     quality={80}
+                    unoptimized
+                    onError={() => setHeroThumbError(true)}
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors rounded-lg">
                     <div className="w-20 h-20 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
@@ -348,13 +352,15 @@ export default function FelicidadeDelasLanding() {
                   aria-label="Reproduzir vídeo de acesso"
                 >
                   <Image
-                    src="/images/access-video-thumb.webp"
+                    src={secondThumbError ? "/thumb-fallback.jpg" : "/images/access-video-thumb.webp"}
                     alt="Como acessar o conteudo - Clique para assistir"
                     fill
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 768px"
                     className="rounded-lg shadow-2xl object-cover"
                     quality={80}
+                    unoptimized
+                    onError={() => setSecondThumbError(true)}
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors rounded-lg">
                     <div className="w-20 h-20 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
