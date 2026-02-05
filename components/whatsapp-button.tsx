@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 export function WhatsAppButton() {
   return (
@@ -6,68 +6,34 @@ export function WhatsAppButton() {
       href="https://wa.link/k2wcfj"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-4 md:bottom-6 md:right-6 z-[9999] group"
+      style={{
+        position: "fixed",
+        bottom: "24px",
+        right: "24px",
+        zIndex: 99999,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "60px",
+        height: "60px",
+        backgroundColor: "#25D366",
+        borderRadius: "50%",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+        transition: "transform 0.2s ease",
+      }}
       aria-label="Fale conosco no WhatsApp"
+      onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+      onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
     >
-      <div className="relative">
-        {/* Subtle pulse animation ring */}
-        <div 
-          className="absolute inset-0 bg-[#25D366] rounded-full opacity-40"
-          style={{
-            animation: "subtlePulse 2.5s ease-in-out infinite"
-          }}
-        />
-
-        {/* Main button with official WhatsApp icon */}
-        <div className="relative flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg transition-transform duration-200 group-hover:scale-110">
-          {/* Official WhatsApp SVG Icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 175.216 175.552"
-            className="w-8 h-8"
-          >
-            <defs>
-              <linearGradient
-                id="whatsapp-gradient"
-                x1="85.915"
-                x2="86.535"
-                y1="32.567"
-                y2="137.092"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stopColor="#57d163" />
-                <stop offset="1" stopColor="#23b33a" />
-              </linearGradient>
-            </defs>
-            <path
-              fill="#fff"
-              d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.559 23.146-6.069 2.235 1.324a60.95 60.95 0 0 0 31.08 8.531h.028c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.909-43.251 60.75 60.75 0 0 0-43.18-17.936z"
-            />
-            <path
-              fill="#fff"
-              d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.559 23.146-6.069 2.235 1.324a60.95 60.95 0 0 0 31.08 8.531h.028c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.909-43.251 60.75 60.75 0 0 0-43.18-17.936z"
-            />
-            <path
-              fill="#fff"
-              d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647z"
-            />
-          </svg>
-        </div>
-      </div>
-
-      {/* CSS for subtle pulse animation */}
-      <style jsx>{`
-        @keyframes subtlePulse {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.4;
-          }
-          50% {
-            transform: scale(1.15);
-            opacity: 0.2;
-          }
-        }
-      `}</style>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="32"
+        height="32"
+        fill="#ffffff"
+      >
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
     </a>
   )
 }
