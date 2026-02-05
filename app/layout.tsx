@@ -4,7 +4,6 @@ import { Inter } from "next/font/google"
 import { Suspense } from "react"
 import Script from "next/script"
 import "./globals.css"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -78,7 +77,6 @@ export default function RootLayout({
       </head>
       <body className={`font-sans ${inter.variable} antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
-        <WhatsAppButton />
       </body>
     </html>
   )

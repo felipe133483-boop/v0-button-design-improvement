@@ -22,6 +22,7 @@ import Image from "next/image"
 import { CountdownTimer } from "@/components/countdown-timer"
 import { AgeGate } from "@/components/age-gate"
 // REMOVED: import { UTMLink } from "@/components/utm-link" // Removed UTMLink import
+import { WhatsAppButton } from "@/components/whatsapp-button"
 import { EditMode } from "@/components/edit-mode"
 import { useState, useEffect, useCallback, useRef } from "react"
 import dynamic from "next/dynamic"
@@ -685,7 +686,7 @@ export default function FelicidadeDelasLanding() {
                         <Check className="w-4 h-4 text-white" />
                       </div>
                       <span className="text-sm md:text-base font-semibold text-gray-900">
-                        MAIS DE 33 AULAS EM 7 M&#211;DULOS
+                        MAIS DE 33 AULAS EM 7 MÓDULOS
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -882,6 +883,8 @@ export default function FelicidadeDelasLanding() {
           </div>
         </section>
       </div>
+
+      <WhatsAppButton />
     </div>
   )
 }
